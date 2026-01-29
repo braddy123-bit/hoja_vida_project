@@ -1,11 +1,8 @@
 from django.urls import path
-from .views import PerfilPublicoView, VentaGarageView, GenerarPDFView
+from .views import HomeView
 
-app_name = 'perfiles'
+app_name = 'core'
 
 urlpatterns = [
-    path('', PerfilPublicoView.as_view(), name='perfil_publico'),
-    path('<str:cedula>/', PerfilPublicoView.as_view(), name='perfil_por_cedula'),
-    path('<str:cedula>/pdf/', GenerarPDFView.as_view(), name='generar_pdf'),
-    path('<str:cedula>/garage/', VentaGarageView.as_view(), name='venta_garage'),
+    path('', HomeView.as_view(), name='home'),
 ]
